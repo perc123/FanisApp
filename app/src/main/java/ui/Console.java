@@ -1,7 +1,7 @@
-package cli;
+package ui;
 
 
-import commandPattern.ICommand;
+
 
 import java.util.Scanner;
 

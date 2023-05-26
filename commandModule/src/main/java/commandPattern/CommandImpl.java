@@ -1,10 +1,15 @@
 package commandPattern;
 
 
+import items.Disk;
+import verwaltung.Listable;
+
 public class CommandImpl implements ICommand {
     public enum Operator {INSERT, SHOW_LIST_SIZE, EDIT, REMOVE, HELP, EXIT, CLEAR_LIST, SORT_LIST}
 
     private Operator operator;
+    private Listable listable;
+    private Disk item;
 
     public CommandImpl(String text) {
         this.operator = getOperatorFromText(text);
@@ -39,30 +44,32 @@ public class CommandImpl implements ICommand {
             case INSERT:
                 System.out.println("Executing INSERT operation...");
                 // Add your implementation for the INSERT operation here
+                listable.add(item);
                 break;
             case SHOW_LIST_SIZE:
                 System.out.println("Executing SHOW LIST SIZE operation...");
                 // Add your implementation for the SHOW LIST SIZE operation here
+                listable.printAll();
                 break;
             case EDIT:
                 System.out.println("Executing EDIT operation...");
-                // Add your implementation for the EDIT operation here
+                listable.edit(item);
                 break;
             case REMOVE:
                 System.out.println("Executing REMOVE operation...");
-                // Add your implementation for the REMOVE operation here
+                listable.delete(item);
                 break;
             case HELP:
                 System.out.println("Executing HELP operation...");
-                // Add your implementation for the HELP operation here
+                System.out.println("Please write the command you want to run.");
                 break;
             case CLEAR_LIST:
                 System.out.println("Executing CLEAR LIST operation...");
-                // Add your implementation for the CLEAR LIST operation here
+                listable.clear();
                 break;
             case SORT_LIST:
                 System.out.println("Executing SORT LIST operation...");
-                // Add your implementation for the SORT LIST operation here
+                //implement
                 break;
             default:
                 System.out.println("Unknown command!");

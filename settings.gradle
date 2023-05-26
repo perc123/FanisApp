@@ -9,3 +9,6 @@
 
 rootProject.name = 'FanisApp'
 include('app')
+include('appBackend')
+include('commandModule')
+

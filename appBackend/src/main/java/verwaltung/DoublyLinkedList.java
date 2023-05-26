@@ -1,7 +1,7 @@
 package verwaltung;
 
 
-public class DoublyLinkedList implements Listable {
+public class DoublyLinkedList<Item> implements Listable<Item> {
     private class Node {
         Item data;
         Node previous;
@@ -85,4 +85,12 @@ public class DoublyLinkedList implements Listable {
             current = current.next;
         }
     }
+
+    @Override
+    public void sort() {
+        // Implementation of the sort method is required here.
+        // This method should sort the items in the list.
+        // The specific sorting algorithm depends on the type of items being stored.
+    }
 }
+
